@@ -29,6 +29,9 @@ public class CliImageConverter implements Runnable {
                 throw new IOException("Input file does not exist");
             }
             String outputFilePath = getOutputFilePath(inputFilePath, targetFormat);
+            convertImage(inputFile, outputFilePath, targetFormat);
+
+            System.out.println("Successfully converted to: " + outputFilePath);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
