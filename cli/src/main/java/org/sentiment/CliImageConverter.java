@@ -38,6 +38,7 @@ public class CliImageConverter implements Runnable {
     }
 
     private void convertImage(File inputFile, String outputFilePath, String format) throws IOException {
+        ImageIO.scanForPlugins();
         BufferedImage image = ImageIO.read(inputFile);
         if (image == null) {
             throw new IOException("Failed to read input image");
